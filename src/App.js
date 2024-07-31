@@ -1,25 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import { QueryClient, QueryClientProvider } from "react-query";
+import { RouterProvider } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
+import { ReactQueryDevtools } from "react-query/devtools";
+import { ToastContainer } from "react-toastify";
+import router from "../src/routes/routes";
+
+const queryClient = new QueryClient({});
 
 function App() {
+
+
+ 
+
+  const handleLogin = () => {
+
+
+    console.log("Logging in");
+
+  
+  
+  };
+
+  const handleRegister = () => {
+
+    console.log("Register");
+   
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+
+    // <Login/>
+    // <Register />
+
+    //<AdminLogin/>
+
+
+    <>
+      <QueryClientProvider client={queryClient}>
+        <ToastContainer theme="coloured" position="top-right" hideProgressBar />
+        <RouterProvider router={router} />
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
+    </>
+
+
+
+    // <div>
+    //   <h1>Welcome to My Website</h1>
+    //   <button onClick={handleLogin}>Login</button>
+    //   <button onClick={handleRegister}>Register</button>
+    // </div>
   );
+
+
+
+
 }
 
 export default App;

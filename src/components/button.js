@@ -1,10 +1,10 @@
 import React from "react";
 
-function Button({ title }) {
+function Button({ title ,onclick}) {
   return (
    
 
-    <button className="btn btn-primary">
+    <button className="btn btn-primary" onClick={onclick}>
                  {title}
                 </button>
   );

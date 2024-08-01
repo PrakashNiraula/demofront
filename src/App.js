@@ -9,31 +9,8 @@ const queryClient = new QueryClient({});
 
 function App() {
 
-
- 
-
-  const handleLogin = () => {
-
-
-    console.log("Logging in");
-
-  
-  
-  };
-
-  const handleRegister = () => {
-
-    console.log("Register");
-   
-  };
-
   return (
 
-
-    // <Login/>
-    // <Register />
-
-    //<AdminLogin/>
 
 
     <>
@@ -46,11 +23,6 @@ function App() {
 
 
 
-    // <div>
-    //   <h1>Welcome to My Website</h1>
-    //   <button onClick={handleLogin}>Login</button>
-    //   <button onClick={handleRegister}>Register</button>
-    // </div>
   );
 
 

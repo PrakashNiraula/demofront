@@ -1,13 +1,15 @@
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import Button, { login } from "../../src/components/button";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import {userdash } from './userdash'
 
 
 
 import React, { Component } from 'react'
 import axios from "axios";
+
 
 export default class Login extends Component {
     constructor(props) {
@@ -53,10 +55,7 @@ handleSubmit=(e)=>{
 
 
 
-    // if(!response.data[0]){
-    //   toast.error("Invalid credentials username or password does not match", { theme: "colored" });
-
-    // }
+    
   
       console.log("logging in user");
 
@@ -69,7 +68,11 @@ handleSubmit=(e)=>{
     // }
   })
   .catch((error) => {
-    console.log(error);
+    //console.log(error);
+    if(error){
+      toast.error("Invalid credentials username or password does not match", { theme: "colored" });
+
+    }
   });
 
 
@@ -79,18 +82,10 @@ handleSubmit=(e)=>{
   render() {
 
     if(this.state.loggedStatus ){
-      return(
 
-        <>
-        
-        
-        </>
 
-        // <>
-        // <p>Navigate and render user dashboard</p>
-        // <p>{this.state.userdetails}</p>
-        // </>
-      )
+      var data=encodeURIComponent(JSON.stringify(this.state.userdetails))
+      return <Navigate to='/userdash' state={{ data: this.state.userdetails }} replace/>
 
 
 

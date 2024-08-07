@@ -5,23 +5,25 @@ import Register from "../pages/register";
 import AdminLogin from '../pages/adminlogin'
 import AuthLayout from "../layout/authlayout";
 import AdminDash from '../pages/admindash';
+import UserDash from "../pages/userdash";
+
 
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <AdminLayout />,
-      children: [
-        {
-          path: "/",
-          element: <AdminDash />,
-        },
-        {
-          path: "*",
-          element: <h1>Error Page</h1>,
-        },
-      ],
-    },
+    // {
+    //   path: "/admindash",
+    //   element: <AdminLayout />,
+    //   children: [
+    //     {
+    //       path: "/admindash",
+    //       element: <AdminDash />,
+    //     },
+    //     {
+    //       path: "*",
+    //       element: <h1>Error Page</h1>,
+    //     },
+    //   ],
+    // },
     {
       path: "/",
       element: <AuthLayout />,
@@ -37,6 +39,15 @@ const router = createBrowserRouter([
           {
             path: "/adminlogin",
             element: <AdminLogin />,
+          },
+
+          {
+            path: "/admindash",
+            element: <AdminDash />,
+          },
+          {
+            path: "/userdash",
+            element: <UserDash />,
           },
         {
           path: "*",

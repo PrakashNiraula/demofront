@@ -5,13 +5,13 @@ import Button, { login } from "../../src/components/button";
 import { toast } from "react-toastify";
 import React, { Component } from 'react'
 import axios from "axios";
+import { Navigate } from "react-router-dom";
 
 export default class AdminLogin extends Component {
 
 
   constructor(props) {
     super(props)
-
     this.state = {
       url:'http://localhost:3000/users/adminlogin',
          email:'',
@@ -21,9 +21,6 @@ export default class AdminLogin extends Component {
          userdetails:[]
     }
 }
-
-
-
 
 handleChange=(e)=>this.setState({[e.target.name]:e.target.value});
 
@@ -95,14 +92,10 @@ handleSubmit=(e)=>{
 
 
     if(this.state.loggedStatus){
+     
 
-     return (
-
-     <div>
-
-    Admin logged in success
-     </div>
-     ) 
+      console.log("Navigating to admin dash");
+  return <Navigate to='/admindash'/>
     }
     else{
       return (
